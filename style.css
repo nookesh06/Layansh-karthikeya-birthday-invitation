@@ -384,3 +384,158 @@ footer p{font-size:8px;letter-spacing:2px;color:#e6c8a4}footer>span{font-size:9p
   .hero-text, .hero-stage { grid-column: auto; }
   .hero-text { max-width: none; }
 }
+
+
+/* ===== Venue, lunch timing and scannable Google Maps QR ===== */
+.venue-section {
+  padding: 92px clamp(22px, 9vw, 130px);
+  background: #fff3e9;
+  position: relative;
+  overflow: hidden;
+}
+.venue-section::before {
+  content: "";
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border-radius: 50%;
+  background: #f7dfd1;
+  right: -150px;
+  top: -170px;
+  opacity: .7;
+}
+.venue-inner {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .75fr);
+  gap: clamp(35px, 7vw, 90px);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.venue-copy h2 {
+  font: 500 clamp(40px, 5vw, 62px)/1.15 var(--serif);
+  color: var(--ink);
+  margin: 17px 0 28px;
+}
+.venue-copy h2 em { color: var(--coral); }
+.venue-detail {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 13px;
+  align-items: start;
+  margin: 19px 0;
+}
+.venue-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f4d8c9;
+  color: #bd735f;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+.venue-detail div { display: grid; gap: 5px; padding-top: 2px; }
+.venue-detail small {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #a17c6d;
+  font-weight: 800;
+}
+.venue-detail strong {
+  font: 600 17px var(--serif);
+  color: #343d51;
+}
+.venue-detail p {
+  font-size: 12px;
+  line-height: 1.75;
+  color: #777783;
+  margin: 0;
+}
+.venue-map-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+  padding: 13px 18px;
+  border-radius: 30px;
+  background: var(--ink);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-decoration: none;
+  transition: transform .2s, background .2s;
+}
+.venue-map-button:hover { transform: translateY(-3px); background: #3a4965; }
+.venue-map-button span { font-size: 17px; }
+.venue-qr-card {
+  width: min(100%, 350px);
+  justify-self: center;
+  padding: 24px 24px 22px;
+  border-radius: 18px;
+  background: #fffdfa;
+  box-shadow: 0 18px 50px rgba(74, 54, 41, .10);
+  border: 1px solid rgba(177, 133, 107, .18);
+  text-align: center;
+}
+.venue-qr-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.venue-pin {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fbe8dd;
+  color: #bd735f;
+  font-size: 21px;
+}
+.venue-qr-heading div { display: grid; gap: 4px; }
+.venue-qr-heading strong { font: 600 18px var(--serif); color: var(--ink); }
+.venue-qr-heading small { font-size: 7px; letter-spacing: 1.3px; color: #9b8276; }
+.venue-qr-link {
+  display: block;
+  width: min(100%, 245px);
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #eee3da;
+  border-radius: 10px;
+  background: #fff;
+}
+.venue-qr-link img { width: 100%; height: auto; image-rendering: pixelated; }
+.venue-qr-card > p {
+  color: #777783;
+  font-size: 10px;
+  line-height: 1.7;
+  margin: 14px 0 8px;
+}
+.venue-text-link {
+  color: #bd735f;
+  font-size: 9px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .venue-section { padding: 70px 20px; }
+  .venue-inner { grid-template-columns: 1fr; gap: 30px; }
+  .venue-copy { text-align: center; }
+  .venue-copy h2 { font-size: clamp(38px, 9vw, 50px); }
+  .venue-detail { max-width: 420px; margin: 18px auto; text-align: left; }
+  .venue-map-button { margin-top: 12px; }
+  .venue-qr-card { width: min(100%, 340px); }
+}
+@media (max-width: 370px) {
+  .venue-section { padding: 58px 15px; }
+  .venue-detail strong { font-size: 15px; }
+  .venue-qr-card { padding: 18px 15px; }
+}
